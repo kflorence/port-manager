@@ -1,0 +1,5 @@
+.*
+!.editorconfig
+!.gitignore
+!.scalafmt.conf
+target/
