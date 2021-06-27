@@ -38,6 +38,6 @@ object StaticPortManager {
     */
   def apply(range: Range): StaticPortManager = new StaticPortManager(range.toSet)
 
-  /** A [[StaticPortManager]] for [[PortBounds.ephemeral]]. */
-  object Ephemeral extends StaticPortManager(PortBounds.ephemeral.toSet)
+  /** A [[StaticPortManager]] for [[PortManager.ephemeralPorts]]. */
+  object Ephemeral extends StaticPortManager(PortManager.ephemeralPorts.toSet)
 }

@@ -18,7 +18,7 @@ package com.kflorence.portManager.scaladsl
 
 import com.kflorence.portManager.javadsl
 
-/** Provides a more scala-friendly syntax for [[javadsl.PortManager]]. */
+/** Provides a more scala-friendly syntax for [[PortManager]]. */
 trait PortManager extends javadsl.PortManager {
   /** Given a set of ports to claim, returns those which were successfully claimed.
     *
@@ -73,6 +73,6 @@ trait PortManager extends javadsl.PortManager {
     Conversions.asScalaSet(getUnclaimed(Conversions.asJavaSet(ports)))
 }
 
-object PortBounds {
-  val ephemeral: Range = 49152 to 65535
+object PortManager {
+  val ephemeralPorts: Range = 49152 to 65535
 }

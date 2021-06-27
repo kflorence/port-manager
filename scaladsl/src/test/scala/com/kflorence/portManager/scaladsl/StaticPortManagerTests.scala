@@ -124,4 +124,10 @@ class StaticPortManagerTests extends AnyWordSpec with Matchers {
       portManager.unclaimed should be(Set(2, 3))
     }
   }
+
+  "Ephemeral" should {
+    "create a StaticPortManager for PortManager.ephemeralPorts" in {
+      StaticPortManager.Ephemeral.reserved should be(PortManager.ephemeralPorts.toSet)
+    }
+  }
 }

@@ -1,7 +1,6 @@
 ThisBuild / compileOrder := CompileOrder.JavaThenScala
 ThisBuild / crossScalaVersions := Seq(Versions.scala212, Versions.scala213)
 ThisBuild / javacOptions := Seq(
-  "-g",
   "-encoding",
   "UTF-8",
   "-source",
@@ -17,10 +16,18 @@ ThisBuild / organizationName := "Kyle Florence"
 ThisBuild / scalaVersion := Versions.scala213
 ThisBuild / startYear := Some(2021)
 
-lazy val `port-manager-scaladsl` = (project in file("."))
+lazy val javadsl = (project in file("javadsl"))
   .enablePlugins(AutomateHeaderPlugin)
   .settings(
-    description := "Thread-safe port management within a port bounds.",
+    description := "Thread-safe port reservation and management for Java.",
+    name := "port-manager-javadsl"
+  )
+
+lazy val scaladsl = (project in file("scaladsl"))
+  .dependsOn(javadsl)
+  .enablePlugins(AutomateHeaderPlugin)
+  .settings(
+    description := "Thread-safe port reservation and management for Scala.",
     libraryDependencies ++= Seq(Dependencies.scalaTest).map(_ % Test),
-    name := "port-manager"
+    name := "port-manager-scaladsl"
   )
