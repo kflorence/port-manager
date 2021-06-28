@@ -13,13 +13,14 @@ ThisBuild / javacOptions := Seq("-encoding", "UTF-8", "-source", Versions.java)
 ThisBuild / licenses += ("Apache-2.0", new URL("https://www.apache.org/licenses/LICENSE-2.0.txt"))
 ThisBuild / organization := "com.kflorence"
 ThisBuild / organizationName := "Kyle Florence"
-ThisBuild / sonatypeCredentialHost := Sonatype.sonatype01
 ThisBuild / scalaVersion := Versions.scala213
 ThisBuild / startYear := Some(2021)
 ThisBuild / versionScheme := Some("early-semver")
 
 // Don't publish the root project
 publish / skip := true
+sonatypeCredentialHost := Sonatype.sonatype01
+sonatypeRepository := "https://s01.oss.sonatype.org/service/local"
 
 lazy val javadsl = (project in file("javadsl"))
   .enablePlugins(AutomateHeaderPlugin)
