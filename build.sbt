@@ -1,5 +1,14 @@
 ThisBuild / compileOrder := CompileOrder.JavaThenScala
 ThisBuild / crossScalaVersions := Seq(Versions.scala212, Versions.scala213)
+ThisBuild / developers := List(
+  Developer(
+    id = "kflorence",
+    name = "Kyle Florence",
+    email = "kyle.florence@gmail.com",
+    url = url("https://kflorence.com")
+  )
+)
+ThisBuild / homepage := Some(url("https://github.com/kflorence/port-manager"))
 ThisBuild / javacOptions := Seq(
   "-encoding",
   "UTF-8",
