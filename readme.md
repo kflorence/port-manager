@@ -6,12 +6,12 @@ Include the library as a dependency of your project (the `Test` scope is optiona
 
 For Java:
 ```sbt
-val portManager = "com.kflorence" %% "port-manager-javadsl" % "0.0.1"
+val portManager = "com.kflorence" %% "port-manager-javadsl" % "0.1.0"
 libraryDependencies ++= Seq(portManager % Test)
 ```
 
 For Scala:
 ```sbt
-val portManager = "com.kflorence" %% "port-manager-scaladsl" % "0.0.1"
+val portManager = "com.kflorence" %% "port-manager-scaladsl" % "0.1.0"
 libraryDependencies ++= Seq(portManager % Test)
 ```
