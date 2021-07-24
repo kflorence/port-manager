@@ -2,8 +2,6 @@ name: Build
 on:
   pull_request:
     branches: ["**"]
-    paths-ignore:
-      - "readme.md"
 jobs:
   build:
     runs-on: ubuntu-20.04
