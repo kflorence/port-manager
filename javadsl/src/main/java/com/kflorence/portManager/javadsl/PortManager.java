@@ -57,7 +57,7 @@ public interface PortManager {
    */
   Set<Integer> claim(Set<Integer> ports);
 
-  /** All claimed ports. */
+  /** @return All claimed ports. */
   default Set<Integer> getClaimed() {
     Set<Integer> diff = new java.util.HashSet<>(getReserved());
     diff.removeAll(getUnclaimed());
@@ -102,7 +102,7 @@ public interface PortManager {
     return !isClaimed(port);
   }
 
-  /** All reserved ports. */
+  /** @return All reserved ports. */
   Set<Integer> getReserved();
 
   /** Given a set of ports, returns those which are reserved.
@@ -131,7 +131,7 @@ public interface PortManager {
    */
   Set<Integer> unclaim(Set<Integer> ports);
 
-  /** All unclaimed ports. */
+  /** @return All unclaimed ports. */
   Set<Integer> getUnclaimed();
 
   /** Given a set of ports, returns those which are unclaimed.
