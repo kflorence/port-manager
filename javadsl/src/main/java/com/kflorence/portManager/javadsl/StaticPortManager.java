@@ -43,13 +43,13 @@ public class StaticPortManager implements PortManager {
 
   /** {@inheritDoc} */
   @Override
-  public Set<Integer> getReserved() {
+  public synchronized Set<Integer> getReserved() {
     return reserved;
   }
 
   /** {@inheritDoc} */
   @Override
-  public Set<Integer> unclaim(Set<Integer> ports) {
+  public synchronized Set<Integer> unclaim(Set<Integer> ports) {
     Set<Integer> unclaimed = getClaimed(ports);
     if (!unclaimed.isEmpty()) {
       Set<Integer> updated = new java.util.HashSet<>(available.get());
@@ -61,7 +61,7 @@ public class StaticPortManager implements PortManager {
 
   /** {@inheritDoc} */
   @Override
-  public Set<Integer> getUnclaimed() {
+  public synchronized Set<Integer> getUnclaimed() {
     return available.get();
   }
 }
